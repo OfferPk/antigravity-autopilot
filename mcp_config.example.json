@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "agy-local-autopilot": {
+      "command": "/absolute/path/to/antigravity-autopilot/.venv/bin/python",
+      "args": ["-m", "agy_autopilot.mcp_server"],
+      "cwd": "/absolute/path/to/antigravity-autopilot",
+      "env": {
+        "AGY_AUTOPILOT_CONFIG": "/absolute/path/to/config.toml"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# Keyless local inference via Ollama's OpenAI-compatible endpoint.
+# Alternatively choose backend = "litert" and set model_path below.
+[model]
+backend = "ollama"
+name = "qwen2.5-coder:14b"
+base_url = "http://127.0.0.1:11434/v1"
+# backend = "litert"
+# model_path = "/absolute/path/to/model.litertlm"
+
+[automation]
+branch_prefix = "antigravity"
+push = true
+poll_seconds = 15
+# data_dir = "~/.local/share/agy-autopilot"
+
+# Add each owned project as a separate entry. Use absolute paths and real base branches.
+[projects.example_app]
+path = "/absolute/path/to/your/project"
+base_branch = "main"
+remote = "origin"
+checks = [["pytest", "-q"]]
+check_timeout_seconds = 1800
+
+# Another example project:
+# [projects.offline_game]
+# path = "/absolute/path/to/offline-game"
+# base_branch = "main"
+# remote = "origin"
+# checks = [["npm", "test"], ["npm", "run", "build"]]
